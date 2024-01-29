@@ -9,8 +9,8 @@ public:
 	bool isClosed() const;
 	void update();
 
-	inline int width() const { return m_screenWidth; }
-	inline int height() const { return m_screenHeight; }
+	inline const int width() const { return m_screenWidth; }
+	inline const int height() const { return m_screenHeight; }
 
 private:
 	unsigned int m_FPS = 60;

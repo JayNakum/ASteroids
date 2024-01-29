@@ -2,7 +2,7 @@
 
 #include "Entity.h"
 
-#include "../math_lib.h"
+#include "../math_lib/math_lib.h"
 
 #include <vector>
 
@@ -36,6 +36,9 @@ public:
 	void update();
 	void fire(const math_lib::Vec2& direction);
 	inline std::vector<Bullet>& getBullets() { return m_bulletsFired; }
+	inline void clear() { m_bulletsFired.clear(); }
+	unsigned int bulletsLeft = 11;
+
 private:
 	std::vector<Bullet> m_bulletsFired;
 	float m_power;

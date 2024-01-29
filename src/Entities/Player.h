@@ -2,7 +2,7 @@
 
 #include "Entity.h"
 
-#include "../math_lib.h"
+#include "../math_lib/math_lib.h"
 
 #include <vector>
 

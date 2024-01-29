@@ -2,7 +2,7 @@
 
 #include "Entity.h"
 
-#include "../math_lib.h"
+#include "../math_lib/math_lib.h"
 
 #include <vector>
 
@@ -32,10 +32,13 @@ private:private:
 class Asteroids
 {
 public:
+	const unsigned int MAX_COUNT = 10;
 	void update();
 	void spawn(const math_lib::Vec2& position);
 
 	inline std::vector<Asteroid>& getAsteroids() { return m_asteroids; }
+
+	inline int getCount() const { return m_asteroids.size(); }
 
 	inline void clear() { m_asteroids.clear(); }
 	~Asteroids();

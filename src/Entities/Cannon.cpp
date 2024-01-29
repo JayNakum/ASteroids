@@ -37,4 +37,5 @@ void Cannon::fire(const math_lib::Vec2& direction)
 	Bullet newBullet(direction);
 	newBullet.ID = m_bulletsFired.size();
 	m_bulletsFired.push_back(newBullet);
+	bulletsLeft -= 1;
 }

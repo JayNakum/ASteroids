@@ -141,7 +141,7 @@
     <ClCompile Include="src\Entities\Asteroids.cpp" />
     <ClCompile Include="src\Entities\Cannon.cpp" />
     <ClCompile Include="src\Entities\Player.cpp" />
-    <ClCompile Include="src\math_lib.cpp" />
+    <ClCompile Include="src\math_lib\math_lib.cpp" />
     <ClCompile Include="src\math_lib\math_vectors.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
   </ItemGroup>
@@ -150,7 +150,7 @@
     <ClInclude Include="src\Entities\Asteroids.h" />
     <ClInclude Include="src\Entities\Cannon.h" />
     <ClInclude Include="src\Entities\Entity.h" />
-    <ClInclude Include="src\math_lib.h" />
+    <ClInclude Include="src\math_lib\math_lib.h" />
     <ClInclude Include="src\math_lib\math_matrices.h" />
     <ClInclude Include="src\math_lib\math_vectors.h" />
     <ClInclude Include="src\Entities\Player.h" />

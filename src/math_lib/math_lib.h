@@ -2,8 +2,8 @@
 
 #include <cmath>
 
-#include "math_lib/math_matrices.h"
-#include "math_lib/math_vectors.h"
+#include "math_matrices.h"
+#include "math_vectors.h"
 
 #define PI 3.14159265358979323846f
 
