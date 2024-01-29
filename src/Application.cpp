@@ -35,10 +35,9 @@ public:
 		while (!m_mainWindow.isClosed())
 		{
 			m_mainWindow.update();
+			_handleEvents();
 			if (m_gameState)
 			{
-				_handleEvents();
-
 				m_player.update();
 				m_cannon.update();
 				m_asteroids.update();
@@ -73,12 +72,23 @@ private:
 
 	void _handleEvents()
 	{
-		if (IsKeyDown(KEY_LEFT))
-			m_player.rotate(-3);
-		if (IsKeyDown(KEY_RIGHT))
-			m_player.rotate(3);
-		if (IsKeyPressed(KEY_SPACE) && m_cannon.bulletsLeft)
-			m_cannon.fire(m_player.fireDirection());
+		if (m_gameState)
+		{
+			if (IsKeyDown(KEY_LEFT))
+				m_player.rotate(-3);
+			if (IsKeyDown(KEY_RIGHT))
+				m_player.rotate(3);
+			if (IsKeyPressed(KEY_SPACE) && m_cannon.bulletsLeft)
+				m_cannon.fire(m_player.fireDirection());
+		}
+		else
+		{
+			if (IsKeyPressed(KEY_SPACE))
+			{
+				m_score = 0;
+				m_gameState = true;
+			}
+		}
 	}
 
 	void _checkCollision()
@@ -172,11 +182,6 @@ private:
 			Renderer::drawText(previousScore.c_str(), 26, { (m_mainWindow.width() / 2.0f) - (width / 2.0f), (m_mainWindow.height() / 2.0f) + width });
 		}
 		Renderer::end();
-		if (IsKeyPressed(KEY_SPACE))
-		{
-			m_score = 0;
-			m_gameState = true;
-		}
 	}
 
 private:

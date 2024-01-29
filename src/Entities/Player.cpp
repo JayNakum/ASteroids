@@ -5,7 +5,7 @@
 Player::Player()
 {
 	scale(50);
-	// rotate(180);
+	rotate(180);
 }
 
 void Player::draw()	const
